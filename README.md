@@ -1,116 +1,64 @@
-# Paystack Payment Gateway for OpenCart 4.x
+## Paystack Payment Gateway for OpenCart 4
 
-This is a custom Paystack payment gateway extension built specifically for **OpenCart 4.x.x.x**.
+This Paystack payment gateway extension is designed specifically for **OpenCart 4.x**.  
+The official Paystack plugin supports up to **OpenCart 3.0.3.2** and is not compatible with newer versions like **4.0.2.3**  
+This extension is based on the official Paystack integration guide, but updated for compatibility with OpenCart's new directory structure and powered by **Paystack API v2**.
 
-> 📌 The official Paystack plugin [only supports OpenCart 3.0.3.2](https://www.opencart.com/index.php?route=marketplace/extension/info&extension_id=25767) and is **not compatible** with OpenCart 4.x (e.g., 4.0.2.3).
-> ✅ This version is designed for the new folder structure introduced in OpenCart 4.
+### Features
 
----
+- ✅ Fully compatible with OpenCart 4.x
+- 🚀 Uses Paystack API v2 for improved flexibility
+- 💱 Supports multiple Paystack-approved currencies
+- 🔄 Performs automatic currency conversion using store exchange rates
+- 🧩 Follows OpenCart 4 extension structure
 
-## ⚠️ Compatibility
+### Installation Guide
 
-* ✅ Compatible with: **OpenCart 4.x.x.x**
-* ❌ Not compatible with: **OpenCart 3.x** or earlier
+> This extension is only compatible with OpenCart 4.x. If you're using OpenCart 3.x, refer to the [official Paystack extension](https://www.opencart.com/index.php?route=marketplace/extension/info&extension_id=25767) instead.
 
----
+> This extension follows similar installation steps as described in the [official Paystack documentation](https://support.paystack.com/en/articles/2126082).  
+> However, the extracted content should not reside in folder but in **extension/opencart/** folder
 
-## 📦 Installation Instructions
+1. Extract the downloaded zip file which contains `admin` and `catalog` folder.
+2. Merge the Paystack plugin folders with the folders in `/extension/opencart/` 
+3. Go to `Extensions > Extensions > Payments` in your admin dashboard.
+4. Locate **Paystack** and click **Install**.
+5. Click the **Edit button** to configure the necessary Paystack settings
+6. Enable the extension and save your settings.
 
-### 1. **Download and Extract**
+### Next
 
-* Download the ZIP file of this plugin.
-* Extract it—you should see two folders:
+1. Navigate to `System > Localisation > Currencies.`
+2. Ensure that a supported currency is added. E.g NGN, GHS etc
+3. Enable the currency and ensure it can be selected in store front
 
-  ```
-  admin/
-  catalog/
-  ```
+### Currency Support Differences from Official Plugin
 
----
+The Paystack v1 extension (which uses API v1) only works if **NGN** (or GHS) is the store’s default currency.  
+This modern version leverages Paystack API v2 and offering much greater flexibility:
 
-### 2. **Copy to the Correct Directory**
+- Works as long as any Paystack-supported currency is selected in your store.
+- Automatically converts prices from your store's base currency to the selected Paystack currency using OpenCart’s currency rates.
 
-* In OpenCart 4, extensions should reside inside the `extension/opencart/` folder, not at the root directory.
+For example:
 
-1. Navigate to:
+- Store base currency: USD
+- Customer selects: NGN
+- Paystack processes payment in NGN, converting from USD using your store's exchange rate settings.
 
-   ```
-   your-opencart-root/extension/opencart/
-   ```
+### Compatibility
 
-2. Copy the extracted `admin/` and `catalog/` folders **into** that directory, so the structure becomes:
+| Feature                | Supported |
+| ---------------------- | --------- |
+| OpenCart 4.x           | Yes     |
+| OpenCart 3.x           | No      |
+| Paystack API v2        | Yes     |
+| NGN only (forced)      | No      |
+| Multi-currency support | Yes     |
 
-   ```
-   extension/opencart/admin/controller/...
-   extension/opencart/catalog/controller/...
-   ```
 
-✅ **Do NOT copy them into the root-level `admin/` or `catalog/` directories** — that is only valid for OpenCart 3.x.
+### Help &amp; Support
 
----
-
-### 3. **Install the Extension**
-
-* Log into your OpenCart Admin Dashboard.
-* Go to: `Extensions` → `Extensions` → Select `Payments`.
-* Find **Paystack** and click **Install**.
-* Then click **Edit** to configure it.
-
----
-
-### 4. **Configure Paystack**
-
-* Enter your **Live** and **Test** API keys from your [Paystack Dashboard](https://dashboard.paystack.com/#/settings/developer).
-* Set **Live Mode** to `Yes` or `No` depending on your environment.
-* Set **Status** to `Enabled`.
-* Save your settings.
-
----
-
-### 5. **Enable NGN (₦) Currency**
-
-* Go to `System` → `Localisation` → `Currencies`.
-* Add or enable **Naira (NGN)**.
-* Then go to `System` → `Settings` → Edit your store → Set default currency to **NGN**.
-
----
-
-## 🧪 Testing
-
-* Set Live Mode to `No` and use test card details from Paystack to simulate payments.
-* Verify that orders are correctly updated and Paystack callbacks work.
-
----
-
-## 🛠 Troubleshooting
-
-* If the payment method does not show up:
-
-  * Confirm files are copied into `extension/opencart/`, not the root.
-  * Clear modifications and cache under `Extensions → Modifications`.
-
-* If payments don’t go through:
-
-  * Verify API keys
-  * Check store currency is set to **NGN**
-
----
-
-## 📧 Support
-
-For support with this custom plugin:
-
-* **Developer:** \[Your Name]
-* **Email:** \[[your@email.com](mailto:your@email.com)]
-
-For Paystack-specific issues, visit [Paystack Support](https://support.paystack.com) or email [techsupport@paystack.com](mailto:techsupport@paystack.com).
-
----
-
-## 📄 License
-
-MIT License
-
----
-
-Let me know if you want a downloadable ZIP or GitHub repo scaffold to go along with this!
+This extension is independently maintained by [Ucscode](https://ucscode.com).  
+For support or feature requests, please reach out to me directly with you **Support ID** either on social media or email &mdash; uche23mail@gmail.com  
+For general inquiries about Paystack, reach out to techsupport@paystack.com or visit the [Paystack Help Center](https://support.paystack.com/).
