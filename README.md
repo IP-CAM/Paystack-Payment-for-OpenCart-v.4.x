@@ -17,7 +17,7 @@ This extension is based on the official Paystack integration guide, but updated 
 > This extension is only compatible with OpenCart 4.x. If you're using OpenCart 3.x, refer to the [official Paystack extension](https://www.opencart.com/index.php?route=marketplace/extension/info&extension_id=25767) instead.
 
 > This extension follows similar installation steps as described in the [official Paystack documentation](https://support.paystack.com/en/articles/2126082).  
-> However, the extracted content should not reside in folder but in **extension/opencart/** folder
+> However, the extracted content should not reside in the root folder but in **extension/opencart/** folder
 
 1. Extract the downloaded zip file which contains `admin` and `catalog` folder.
 2. Merge the Paystack plugin folders with the folders in `/extension/opencart/` 
