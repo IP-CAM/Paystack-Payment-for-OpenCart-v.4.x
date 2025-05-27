@@ -1,0 +1,3 @@
+- Extract the content of the downloaded zip file which contains 'admin' and 'catalog' folder. 
+- Merge both folders to `extension/opencart/` directory.
+- which has its own Admin and Catalog folders.

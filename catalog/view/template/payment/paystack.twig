@@ -1,0 +1,76 @@
+<div id="paystack-payment">
+    {% if not livemode %}
+        <div class="alert alert-danger">
+            <i class="fa fa-exclamation-circle"></i> {{ text_testmode }}
+        </div>
+    {% endif %}
+
+    <div class="text-end">
+        <button type="button" id="button-confirm" class="btn btn-primary">{{ button_confirm }}</button>
+    </div>
+
+    <script src="https://js.paystack.co/v2/inline.js"></script>
+    <script>
+        (function() {
+            let transaction;
+
+            function confirmTransaction(element, transaction) {
+                $.ajax({
+                    url: '{{ callback }}&language={{ language }}',
+                    dataType: 'json',
+                    beforeSend: function() {
+                        $(element).button('loading');
+                    },
+                    complete: function() {
+                        $(element).button('reset');
+                    },
+                    success: function(json) {
+                        if (json['error']) {
+                            $('#alert').prepend('<div class="alert alert-danger alert-dismissible"><i class="fa-solid fa-circle-exclamation"></i> ' + json['error'] + ' <button type="button" class="btn-close" data-bs-dismiss="alert"></button></div>');
+                        }
+
+                        if (json['redirect']) {
+                            location = json['redirect'];
+                        }
+                    },
+                    error: function(xhr, ajaxOptions, thrownError) {
+                        console.log(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+                    }
+                });
+
+                return transaction;
+            }
+
+            $('#button-confirm').on('click', function() {
+                // If transaction is successful, probably could not be verified due to internet connect problem
+                // Verification will be retried instead of initializing a completely new transaction
+                if (transaction) {
+                    return confirmTransaction(this, transaction);
+                }
+
+                // inline.js script hasn't loaded properly
+                if (typeof PaystackPop === undefined) {
+                    return alert('Paystack component is not fully loaded. Please check your internet connection and try again');
+                }
+
+                new PaystackPop().newTransaction({
+                    key: '{{ key }}', // public key
+                    email: '{{ email }}',
+                    amount: {{ amount }}, // kobo
+                    currency: '{{ currency }}',
+                    reference: '{{ ref }}',
+                    metadata:{
+                        "custom_fields":[
+                            {
+                            "display_name":"Plugin",
+                            "variable_name":"plugin",
+                            "value":"opencart-4.x"
+                            }
+                        ]
+                    },
+                    onSuccess: (result) => transaction = confirmTransaction(this, result),
+                });
+            });
+        })();
+    </script>
+</div>
