@@ -1,5 +1,5 @@
 <?php
-namespace Opencart\Catalog\Model\Extension\Opencart\Payment;
+namespace Opencart\Catalog\Model\Extension\Paystack\Payment;
 /**
  * Class Paystack
  *
@@ -19,7 +19,7 @@ namespace Opencart\Catalog\Model\Extension\Opencart\Payment;
  * @property \Opencart\Catalog\Model\Localisation\GeoZone $model_localisation_geo_zone
  * @property \Opencart\System\Library\Cart\Currency $currency
  * 
- * @package Opencart\Catalog\Model\Extension\Opencart\Payment
+ * @package Opencart\Catalog\Model\Extension\Paystack\Payment
  */
 class Paystack extends \Opencart\System\Engine\Model 
 {
@@ -31,7 +31,7 @@ class Paystack extends \Opencart\System\Engine\Model
 		'KES',
 	];
 
-	protected const ROUTE_PATH = 'extension/opencart/payment/paystack';
+	protected const ROUTE_PATH = 'extension/paystack/payment/paystack';
 
 	/**
 	 * @param array $address The customer's billing address, if collected by the store. 

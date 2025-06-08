@@ -1,8 +1,8 @@
 <?php
 
-namespace Opencart\Catalog\Controller\Extension\Opencart\Payment;
+namespace Opencart\Catalog\Controller\Extension\Paystack\Payment;
 
-use Opencart\Catalog\Model\Extension\Opencart\Payment\Paystack as PaystackModel;
+use Opencart\Catalog\Model\Extension\Paystack\Payment\Paystack as PaystackModel;
 
 /**
  * Class Paystack
@@ -20,11 +20,11 @@ use Opencart\Catalog\Model\Extension\Opencart\Payment\Paystack as PaystackModel;
  * @property \Opencart\System\Library\Cart\Currency $currency
  * @property \Opencart\System\Library\Log $log
  * 
- * @package Opencart\Catalog\Controller\Extension\Opencart\Payment
+ * @package Opencart\Catalog\Controller\Extension\Paystack\Payment
  */
 class Paystack extends \Opencart\System\Engine\Controller 
 {
-	protected const ROUTE_PATH = 'extension/opencart/payment/paystack';
+	protected const ROUTE_PATH = 'extension/paystack/payment/paystack';
 
 	public function index(): string 
 	{

@@ -1,6 +1,6 @@
 <?php
 
-namespace Opencart\Admin\Controller\Extension\Opencart\Payment;
+namespace Opencart\Admin\Controller\Extension\Paystack\Payment;
 
 /**
  * Class Paystack
@@ -16,11 +16,11 @@ namespace Opencart\Admin\Controller\Extension\Opencart\Payment;
  * @property \Opencart\System\Library\Response $response
  * @property \Opencart\System\Engine\Proxy&\Opencart\Admin\Model\Setting\Setting $model_setting_setting
  * 
- * @package Opencart\Admin\Controller\Extension\Opencart\Payment;
+ * @package Opencart\Admin\Controller\Extension\Paystack\Payment;
  */
 class Paystack extends \Opencart\System\Engine\Controller 
 {
-	protected const ROUTE_PATH = 'extension/opencart/payment/paystack';
+	protected const ROUTE_PATH = 'extension/paystack/payment/paystack';
 
 	/**
 	 * @var array<string, string>
