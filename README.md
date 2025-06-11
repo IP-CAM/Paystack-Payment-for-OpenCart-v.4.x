@@ -16,15 +16,13 @@ This extension is based on the official Paystack integration guide, but updated 
 
 > This extension is only compatible with OpenCart 4.x. If you're using OpenCart 3.x, refer to the [official Paystack extension](https://www.opencart.com/index.php?route=marketplace/extension/info&extension_id=25767) instead.
 
-> This extension follows similar installation steps as described in the [official Paystack documentation](https://support.paystack.com/en/articles/2126082).  
-> However, the extracted content should not reside in the root folder but in **extension/opencart/** folder
-
-1. Extract the downloaded zip file which contains `admin` and `catalog` folder.
-2. Merge the Paystack plugin folders with the folders in `/extension/opencart/` 
-3. Go to `Extensions > Extensions > Payments` in your admin dashboard.
-4. Locate **Paystack** and click **Install**.
-5. Click the **Edit button** to configure the necessary Paystack settings
-6. Enable the extension and save your settings.
+1. Download this repository as `.ocmod.zip`
+2. Navigate to `Extensions -> Installer`
+3. Upload the `.ocmod.zip` file
+4. Navigate to `Extensions -> Extensions -> Payments`
+5. Find Paystack, then click Install
+6. After installing, click **Edit** next to Paystack to configure the necessary settings.
+7. Enable the extension and save your settings.
 
 ### Next
 
