@@ -60,5 +60,5 @@ For example:
 ### Help &amp; Support
 
 This extension is independently maintained by [Ucscode](https://ucscode.com).  
-For support or feature requests, please reach out to me directly with you **Support ID** either on social media or email &mdash; uche23mail@gmail.com  
+Feel free to suggest features or improvements via GitHub pull request or reach out directly.
 For general inquiries about Paystack, reach out to techsupport@paystack.com or visit the [Paystack Help Center](https://support.paystack.com/).
